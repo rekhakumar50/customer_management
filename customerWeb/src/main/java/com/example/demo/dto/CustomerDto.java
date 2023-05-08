@@ -17,6 +17,6 @@ public class CustomerDto implements Serializable {
 	private String lastName;
 	private String dob;
 	private String phoneNumber;
-	private Set<String> addresses;
+	private Set<AddressDto> addresses;
 
 }

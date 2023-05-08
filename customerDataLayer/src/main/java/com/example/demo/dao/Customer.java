@@ -38,7 +38,7 @@ public class Customer implements Serializable {
 	private String phoneNumber;
 	
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	private Set<String> addresses;
+	private Set<Address> addresses;
 	
 	@CreationTimestamp
 	@Column(nullable = false)

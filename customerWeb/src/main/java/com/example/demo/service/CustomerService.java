@@ -24,7 +24,6 @@ public class CustomerService {
 	private CustomerRepository customerRepository;
 	
 	
-	//add customer
 	public void addCustomer(CustomerDto customerDto) {
 		Customer customer = convertToCustomer(customerDto);
 		customerRepository.save(customer);

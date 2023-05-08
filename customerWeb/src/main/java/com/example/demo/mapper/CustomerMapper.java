@@ -13,7 +13,7 @@ public class CustomerMapper {
 		customerDto.setLastName(customer.getLastName());
 		customerDto.setDob(customer.getDob());
 		customerDto.setPhoneNumber(customer.getPhoneNumber());
-		customerDto.setAddresses(customer.getAddresses());
+		customerDto.setAddresses(AddressMapper.convertToAddressDto(customer.getAddresses()));
 
 		return customerDto;
 	}
@@ -26,7 +26,7 @@ public class CustomerMapper {
 		customer.setLastName(customerDto.getLastName());
 		customer.setDob(customerDto.getDob());
 		customer.setPhoneNumber(customerDto.getPhoneNumber());
-		customer.setAddresses(customerDto.getAddresses());
+		customer.setAddresses(AddressMapper.convertToAddress(customerDto.getAddresses()));
 
 		return customer;
 	}
