@@ -1,7 +1,7 @@
 package com.example.demo.dto;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +17,6 @@ public class CustomerDto implements Serializable {
 	private String lastName;
 	private String dob;
 	private String phoneNumber;
-	private Set<AddressDto> addresses;
+	private List<AddressDto> addresses;
 
 }

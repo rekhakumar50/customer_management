@@ -74,7 +74,7 @@ public class CustomerController {
 	}
 	
 	
-	@GetMapping(value = "/customers", consumes = "application/json")
+	@GetMapping(value = "/customers", produces = "application/json")
 	public ResponseEntity<Response> getAllCustomer() {
 		List<CustomerDto>  customerDtoList = customerService.getAllCustomers();
 		try {
@@ -88,7 +88,7 @@ public class CustomerController {
 	}
 	
 	
-	@GetMapping(value = "/customer/email", consumes = "application/json")
+	@GetMapping(value = "/customer/{email}", produces = "application/json")
 	public ResponseEntity<Response>  getCustomerByemail(@PathVariable String email) {
 		CustomerDto customerDto = null;
 		try {

@@ -1,7 +1,7 @@
 package com.example.demo.mapper;
 
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -13,13 +13,13 @@ import com.example.demo.dto.AddressDto;
 public class AddressMapper {
 
 	
-	public static Set<AddressDto> convertToAddressDto(Set<Address> addressList) {
-		Set<AddressDto> addressDtoList = null;
+	public static List<AddressDto> convertToAddressDto(List<Address> addressList) {
+		List<AddressDto> addressDtoList = null;
 		if(CollectionUtils.isNotEmpty(addressList)) {
 			addressDtoList = addressList.stream()
 										.filter(Objects::nonNull)
 										.map(addressDtoMap)
-										.collect(Collectors.toSet());
+										.collect(Collectors.toList());
 		}
 		return addressDtoList;
 	}
@@ -27,7 +27,6 @@ public class AddressMapper {
 	
 	private static Function<Address, AddressDto> addressDtoMap = address -> {
 		AddressDto addressDto = new AddressDto();
-		addressDto.setAddressId(address.getAddressId());
 		addressDto.setStreet1(address.getStreet1());
 		addressDto.setStreet2(address.getStreet2());
 		addressDto.setCity(address.getCity());
@@ -40,13 +39,13 @@ public class AddressMapper {
 	};
 	
 	
-	public static Set<Address> convertToAddress(Set<AddressDto> addressDtoList) {
-		Set<Address> addressList = null;
+	public static List<Address> convertToAddress(List<AddressDto> addressDtoList) {
+		List<Address> addressList = null;
 		if(CollectionUtils.isNotEmpty(addressDtoList)) {
 			addressList = addressDtoList.stream()
 										.filter(Objects::nonNull)
 										.map(addressMap)
-										.collect(Collectors.toSet());
+										.collect(Collectors.toList());
 		}
 		return addressList;
 	}
@@ -55,7 +54,6 @@ public class AddressMapper {
 	
 	private static Function<AddressDto, Address> addressMap = addressDto -> {
 		Address address = new Address();
-		address.setAddressId(addressDto.getAddressId());
 		address.setStreet1(addressDto.getStreet1());
 		address.setStreet2(addressDto.getStreet2());
 		address.setCity(addressDto.getCity());

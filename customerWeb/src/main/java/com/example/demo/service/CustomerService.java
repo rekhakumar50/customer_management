@@ -7,20 +7,18 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.Customer;
 import com.example.demo.dto.CustomerDto;
 import com.example.demo.repository.CustomerRepository;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Service
 public class CustomerService {
 	
+	@Autowired
 	private CustomerRepository customerRepository;
 	
 	
