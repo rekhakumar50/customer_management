@@ -3,3 +3,13 @@
 .settings/
 .git/
 target/
+customerWeb/.classpath
+customerWeb/.factorypath
+customerWeb/.project
+customerWeb/.settings
+customerWeb/target/
+customerDataLayer/.classpath
+customerDataLayer/.factorypath
+customerDataLayer/.project
+customerDataLayer/.settings
+customerDataLayer/target/
